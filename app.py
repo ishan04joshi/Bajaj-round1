@@ -1,3 +1,4 @@
+# app.py
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
@@ -5,7 +6,7 @@ app = Flask(__name__)
 @app.route('/bfhl', methods=['POST'])
 def handle_post():
     data = request.get_json()
-    
+
     if not data or "data" not in data:
         return jsonify({
             "is_success": False,
@@ -17,10 +18,10 @@ def handle_post():
             "highest_alphabet": []
         })
 
-    full_name = "john_doe"  
-    dob = "17091999"      
-    email = "john@xyz.com"  
-    roll_number = "ABCD123" 
+    full_name = "john_doe"  # Replace with actual full name
+    dob = "17091999"       # Replace with actual date of birth
+    email = "john@xyz.com"  # Replace with actual email
+    roll_number = "ABCD123" # Replace with actual roll number
 
     user_id = f"{full_name}_{dob}"
 
